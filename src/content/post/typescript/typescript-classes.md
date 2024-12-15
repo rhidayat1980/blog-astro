@@ -7,20 +7,26 @@ category: "TypeScript"
 tags: ["typescript", "classes", "oop", "programming"]
 ---
 
-# TypeScript Classes: The Complete Guide
+## TypeScript Classes: The Complete Guide
 
 TypeScript classes provide a powerful way to define blueprints for objects, combining the familiar class-based object-oriented programming with TypeScript's strong type system. This guide covers everything you need to know about TypeScript classes.
 
 ## Table of Contents
-1. [Class Basics](#class-basics)
-2. [Constructor and Properties](#constructor-and-properties)
-3. [Access Modifiers](#access-modifiers)
-4. [Inheritance](#inheritance)
-5. [Abstract Classes](#abstract-classes)
-6. [Interfaces and Classes](#interfaces-and-classes)
-7. [Static Members](#static-members)
-8. [Advanced Class Patterns](#advanced-class-patterns)
-9. [Best Practices](#best-practices)
+
+- [TypeScript Classes: The Complete Guide](#typescript-classes-the-complete-guide)
+- [Table of Contents](#table-of-contents)
+- [Class Basics](#class-basics)
+- [Constructor and Properties](#constructor-and-properties)
+- [Access Modifiers](#access-modifiers)
+- [Inheritance](#inheritance)
+- [Abstract Classes](#abstract-classes)
+- [Interfaces and Classes](#interfaces-and-classes)
+- [Static Members](#static-members)
+- [Advanced Class Patterns](#advanced-class-patterns)
+  - [Singleton Pattern](#singleton-pattern)
+  - [Factory Pattern](#factory-pattern)
+- [Best Practices](#best-practices)
+- [Conclusion](#conclusion)
 
 ## Class Basics
 
@@ -304,6 +310,7 @@ class VehicleFactory {
 ## Best Practices
 
 1. **Use Parameter Properties for Simple Classes**
+
 ```typescript
 // Good
 class User {
@@ -326,6 +333,7 @@ class User {
 ```
 
 2. **Prefer Composition Over Inheritance**
+
 ```typescript
 // Good
 class EmailSender {
@@ -349,6 +357,7 @@ class UserService extends EmailSender {
 ```
 
 3. **Use Access Modifiers Appropriately**
+
 ```typescript
 class BankAccount {
     private balance: number;  // Encapsulate internal state
@@ -359,6 +368,7 @@ class BankAccount {
 ```
 
 4. **Implement Interfaces for Better Type Safety**
+
 ```typescript
 interface Repository<T> {
     save(item: T): Promise<void>;
@@ -371,6 +381,7 @@ class UserRepository implements Repository<User> {
 ```
 
 5. **Document Complex Classes**
+
 ```typescript
 /**
  * Represents a bank account with basic operations

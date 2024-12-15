@@ -10,6 +10,7 @@ tags: ["typescript", "angular", "frontend", "programming"]
 # TypeScript with Angular
 
 ## Table of Contents
+
 1. [Components](#components)
 2. [Services](#services)
 3. [Dependency Injection](#dependency-injection)

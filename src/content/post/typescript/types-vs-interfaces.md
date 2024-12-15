@@ -7,11 +7,12 @@ category: "TypeScript"
 tags: ["typescript", "types", "interfaces", "classes", "programming"]
 ---
 
-# TypeScript: Types vs Interfaces vs Classes
+## TypeScript: Types vs Interfaces vs Classes
 
 One of the most common questions TypeScript developers face is when to use types, interfaces, or classes. This guide will help you make informed decisions by comparing these features and providing clear guidelines for their usage.
 
 ## Table of Contents
+
 1. [Quick Comparison](#quick-comparison)
 2. [Type Aliases](#type-aliases)
 3. [Interfaces](#interfaces)
@@ -49,6 +50,7 @@ class Point {
 ### Key Differences
 
 1. **Declaration Merging**
+
 ```typescript
 // Interfaces can be merged
 interface User {
@@ -70,6 +72,7 @@ type User = {
 ```
 
 2. **Computed Properties**
+
 ```typescript
 // Types can use computed properties
 type Keys = "firstname" | "lastname";
@@ -83,6 +86,7 @@ type NameFields = DuplicateString<Keys>;
 ```
 
 3. **Union Types**
+
 ```typescript
 // Types can be unions
 type Status = "pending" | "approved" | "rejected";
@@ -92,6 +96,7 @@ interface Status { /* Error */ }
 ```
 
 4. **Implementation and Inheritance**
+
 ```typescript
 // Classes can implement interfaces
 interface Animal {
@@ -120,9 +125,10 @@ class Circle extends Shape {
 
 ## When to Use Each
 
-### Use Types When:
+### Use Types When
 
 1. **Creating Union Types**
+
 ```typescript
 type Result<T> = {
     success: true;
@@ -144,6 +150,7 @@ function processResult<T>(result: Result<T>) {
 ```
 
 2. **Working with Tuples**
+
 ```typescript
 type HttpResponse = [number, string, any];
 type Coordinates = [number, number];
@@ -153,6 +160,7 @@ const point: Coordinates = [10, 20];
 ```
 
 3. **Creating Complex Type Manipulations**
+
 ```typescript
 type Nullable<T> = T | null;
 type Readonly<T> = {
@@ -163,9 +171,10 @@ type Pick<T, K extends keyof T> = {
 };
 ```
 
-### Use Interfaces When:
+### Use Interfaces When
 
 1. **Defining Object Shapes**
+
 ```typescript
 interface User {
     id: string;
@@ -180,6 +189,7 @@ interface UserService {
 ```
 
 2. **Working with Classes**
+
 ```typescript
 interface Repository<T> {
     find(id: string): Promise<T>;
@@ -193,6 +203,7 @@ class UserRepository implements Repository<User> {
 ```
 
 3. **Extending Other Interfaces**
+
 ```typescript
 interface BaseEntity {
     id: string;
@@ -206,9 +217,10 @@ interface User extends BaseEntity {
 }
 ```
 
-### Use Classes When:
+### Use Classes When
 
 1. **Creating Instances with State and Behavior**
+
 ```typescript
 class Counter {
     private count: number = 0;
@@ -227,6 +239,7 @@ counter.increment();
 ```
 
 2. **Implementing Object-Oriented Patterns**
+
 ```typescript
 class Logger {
     private static instance: Logger;
@@ -246,6 +259,7 @@ class Logger {
 ```
 
 3. **Managing Complex State with Encapsulation**
+
 ```typescript
 class ShoppingCart {
     private items: Array<{
@@ -270,6 +284,7 @@ class ShoppingCart {
 ## Best Practices
 
 1. **Prefer Interfaces for Public APIs**
+
 ```typescript
 // Good
 interface ApiResponse<T> {
@@ -287,6 +302,7 @@ type ApiResponse<T> = {
 ```
 
 2. **Use Types for Complex Type Operations**
+
 ```typescript
 // Good
 type NonNullableFields<T> = {
@@ -297,6 +313,7 @@ type NonNullableFields<T> = {
 ```
 
 3. **Use Classes for Stateful Objects**
+
 ```typescript
 // Good
 class UserManager {
@@ -386,6 +403,7 @@ Choose based on your needs:
   - Stateful behavior
 
 Remember:
+
 - Interfaces are often preferred for public APIs due to their extensibility
 - Types are great for complex type manipulations and unions
 - Classes are best when you need instances with behavior and state
