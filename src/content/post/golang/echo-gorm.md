@@ -848,13 +848,15 @@ volumes:
 
 1.  Start only the database:
 
-    ```bash
+```bash
+
 docker-compose -f docker-compose.dev.yml up -d
+
 ```
 
 2.  Run the application locally:
 
-    ```bash
+```bash
 go run main.go
 ```
 
@@ -862,20 +864,24 @@ go run main.go
 
 1.  Build and start all services:
 
-    ```bash
+```bash
+
 docker-compose up -d --build
+
 ```
 
 2.  View logs:
 
-    ```bash
+```bash
 docker-compose logs -f app
 ```
 
 3.  Stop all services:
 
-    ```bash
+```bash
+
 docker-compose down
+
 ```
 
 #### Accessing Services
@@ -884,12 +890,10 @@ docker-compose down
 *   Prometheus: <http://localhost:9090>
 *   Grafana: <http://localhost:3000>
 
-#### Environment Variables
+### Environment Variables
 
-Create a `.env` file in the project root:
-
-```env
-DB_HOST=postgres
+```shell
+DB_HOST=localhost
 DB_USER=postgres
 DB_PASSWORD=postgres
 DB_NAME=productstore
